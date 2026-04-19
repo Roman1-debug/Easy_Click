@@ -43,7 +43,7 @@ Install these **before** you do anything else:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Roman1-debug/Easy_Click.git
 cd EasyClick
 ```
 
