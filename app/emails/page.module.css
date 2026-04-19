@@ -1,0 +1,768 @@
+.pageContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #202124;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.header {
+  padding: 12px 16px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.searchBar {
+  background-color: #f1f3f4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100%;
+  max-width: 600px;
+  gap: 12px;
+  transition: background 0.15s;
+}
+.searchBar:focus-within {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  color: #202124;
+  flex: 1;
+  font-size: 16px;
+  outline: none;
+  font-family: inherit;
+}
+
+.noticeBanner {
+  background-color: rgba(91, 186, 111, 0.15);
+  border: 1px solid rgba(91, 186, 111, 0.3);
+  color: #5bba6f;
+  margin: 16px 20px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.mainContent {
+  flex: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Mail List + Toolbar ──────────────────────────────── */
+.mailList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mailToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 6px 8px;
+  min-height: 44px;
+  gap: 8px;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.selectAllCheck {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.toolbarIconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  transition: background 0.15s;
+}
+.toolbarIconBtn:hover { background: #f1f3f4; }
+
+.toolbarDeleteBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #d93025;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.toolbarDeleteBtn:hover { background: #fce8e6; }
+
+.tab {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9aa0a6;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.tabActive {
+  color: #0b57d0;
+  background: #e8f0fe;
+}
+
+/* ─── Email Rows ──────────────────────────────────────── */
+.emails {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: #9aa0a6;
+  font-size: 14px;
+}
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f1f3f4;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: rgba(242,245,245,0.8);
+  gap: 12px;
+  min-height: 52px;
+}
+
+.emailRow:hover {
+  background-color: #fff;
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+  z-index: 2;
+}
+
+.emailRowSelected {
+  background: #e8f0fe !important;
+}
+
+.rowLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0b57d0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.emailTo {
+  font-size: 13px;
+  font-weight: 600;
+  color: #202124;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.rowMid {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.emailSubject {
+  font-weight: 600;
+  color: #202124;
+}
+
+.emailSnippet {
+  color: #9aa0a6;
+  font-weight: 400;
+}
+
+.rowRight {
+  color: #9aa0a6;
+  font-size: 12px;
+  min-width: 60px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ─── Compose FAB ─────────────────────────────────────── */
+.composeFab {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  background-color: #c2e7ff;
+  color: #001d35;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,.3), 0 4px 8px 3px rgba(60,64,67,.15);
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.composeFab:hover {
+  box-shadow: 0 2px 6px 0 rgba(60,64,67,.3), 0 8px 12px 6px rgba(60,64,67,.15);
+  background-color: #b3d9f3;
+}
+
+/* ─── Compose Box ─────────────────────────────────────── */
+.composeBox {
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+  width: 500px;
+  background: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  max-height: 580px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.composeEnlarged {
+  width: 90vw;
+  max-height: 90vh;
+  right: 5vw;
+  bottom: 5vh;
+  border-radius: 8px;
+}
+
+.composeHeader {
+  background: #404040;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+  flex-shrink: 0;
+}
+
+.composeTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.composeHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.composeHeaderBtn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.15s, background 0.15s;
+}
+.composeHeaderBtn:hover { opacity: 1; background: rgba(255,255,255,0.12); }
+
+/* ─── Compose Fields ──────────────────────────────────── */
+.composeFields {
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #f1f3f4;
+  min-height: 40px;
+  gap: 8px;
+}
+.fieldRow:last-child { border-bottom: none; }
+
+.fieldLabel {
+  font-size: 13px;
+  color: #5f6368;
+  min-width: 48px;
+  flex-shrink: 0;
+}
+
+.fieldInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #202124;
+  font-family: inherit;
+  background: transparent;
+  padding: 0;
+}
+
+.fieldToggle {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #0b57d0;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.fieldToggle:hover { background: #e8f0fe; }
+
+/* ─── Editor ──────────────────────────────────────────── */
+.editorArea {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-size: 14px;
+  color: #222;
+  overflow-y: auto;
+  min-height: 200px;
+  line-height: 1.6;
+  font-family: inherit;
+  word-break: break-word;
+}
+
+.editorArea:empty:before {
+  content: attr(data-placeholder);
+  color: #9aa0a6;
+}
+
+/* ─── Format Strip ────────────────────────────────────── */
+.formatStrip {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  background: #f8f9fa;
+  border-top: 1px solid #f1f3f4;
+  flex-shrink: 0;
+}
+
+.formatGroup {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.dividerV {
+  width: 1px;
+  height: 20px;
+  background: #dadce0;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.formatSpacer { flex: 1; }
+
+.fmtBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 7px;
+  border-radius: 4px;
+  color: #444;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  min-height: 28px;
+  transition: background 0.12s;
+  font-family: inherit;
+  line-height: 1;
+}
+.fmtBtn:hover { background: #e1e3e6; }
+
+.fmtActive {
+  background: #e8f0fe !important;
+  color: #0b57d0 !important;
+}
+
+.attachBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #0b57d0;
+  background: #e8f0fe;
+  border-radius: 12px;
+  padding: 2px 8px;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.attachBadge button {
+  background: none;
+  border: none;
+  color: #0b57d0;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 0 0 2px;
+  line-height: 1;
+}
+
+/* ─── Bottom Toolbar ──────────────────────────────────── */
+.toolbar {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-top: 1px solid #f1f3f4;
+  flex-shrink: 0;
+}
+
+.toolbarSendGroup { display: flex; align-items: center; }
+.toolbarAiGroup { display: flex; align-items: center; }
+.toolbarRight2 { margin-left: auto; display: flex; align-items: center; }
+
+.btnSend {
+  background: #0b57d0;
+  color: white;
+  border: none;
+  padding: 9px 24px;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.btnSend:hover:not(:disabled) { background: #0842a0; }
+.btnSend:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btnSecondary {
+  background: none;
+  border: 1px solid #dadce0;
+  color: #444;
+  border-radius: 18px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.btnSecondary:hover { background: #f1f3f4; }
+
+.btnAi {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.15s;
+}
+.btnAi:hover:not(:disabled) { opacity: 0.88; }
+.btnAi:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ─── Copilot Panel ───────────────────────────────────── */
+.copilotPanel {
+  border-top: 1px solid #f1f3f4;
+  background: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  max-height: 220px;
+  flex-shrink: 0;
+}
+
+.copilotHeader {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f1f3f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b21a8;
+  flex-shrink: 0;
+}
+.copilotHeader button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+
+.chatWindow {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chatHint {
+  font-size: 12px;
+  color: #9aa0a6;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.userMsg {
+  align-self: flex-end;
+  background: #e1f5fe;
+  color: #01579b;
+  padding: 7px 12px;
+  border-radius: 12px 12px 0 12px;
+  font-size: 12px;
+  max-width: 85%;
+}
+
+.aiMsg {
+  align-self: flex-start;
+  background: #f3e5f5;
+  color: #4a148c;
+  padding: 7px 12px;
+  border-radius: 12px 12px 12px 0;
+  font-size: 12px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.useBtn {
+  display: block;
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #d1d1d1;
+  color: #0b57d0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.useBtn:hover { background: #f1f3f4; }
+
+.thinking {
+  letter-spacing: 4px;
+  color: #9aa0a6;
+  font-size: 12px;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.chatInputRow {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f1f3f4;
+  padding: 8px 10px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.chatInputRow input {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 5px 12px;
+  font-size: 12px;
+  outline: none;
+  font-family: inherit;
+}
+.chatInputRow input:focus { border-color: #a855f7; }
+.chatInputRow button {
+  background: #0b57d0;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.chatInputRow button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── Email Detail Modal ──────────────────────────────── */
+.emailModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.emailDetail {
+  background: white;
+  color: #202124;
+  width: 100%;
+  max-width: 800px;
+  height: 80%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.detailHeader {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f3f4;
+  gap: 12px;
+}
+
+.detailSubject {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #202124;
+  flex: 1;
+}
+
+.detailClose {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #5f6368;
+  padding: 0 4px;
+  line-height: 1;
+}
+.detailClose:hover { color: #202124; }
+
+.detailMeta {
+  padding: 16px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.avatarLarge {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #0b57d0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.detailMetaText p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.detailDate {
+  font-size: 12px !important;
+  color: #9aa0a6 !important;
+}
+
+.detailBody {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.detailActions {
+  padding: 16px 24px;
+  border-top: 1px solid #f1f3f4;
+  display: flex;
+  gap: 12px;
+  background: #f8f9fa;
+}

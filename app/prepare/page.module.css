@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.heroCard {
+  position: relative;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.heroCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.aiCard {
+  background: linear-gradient(135deg, #1a1d23 0%, #374151 100%);
+  color: white;
+}
+
+.guideCard {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 70%;
+  z-index: 2;
+}
+
+.heroContent h2 {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+.heroContent p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.badge {
+  background: var(--accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.heroIcon {
+  font-size: 64px;
+  opacity: 0.2;
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}
+
+/* Topics */
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.topicGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.topicCard {
+  background: white;
+  border: 1.5px solid var(--border);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.topicCard:hover {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+}
+
+.topicCardActive {
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.topicIcon {
+  font-size: 24px;
+  padding: 8px;
+  background: var(--bg-base);
+  border-radius: 12px;
+}
+
+.topicInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.topicLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.topicCount {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Questions */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.questionItem {
+  padding: 20px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--accent);
+}
+
+.qHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.qCompany {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.qText {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.qFooter {
+  display: flex;
+  gap: 12px;
+}
+
+/* Resources */
+.resTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.resText {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.resLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+}

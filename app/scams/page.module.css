@@ -1,0 +1,162 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  margin-bottom: 12px;
+  transition: border-color 0.15s;
+}
+
+.searchbar:focus-within {
+  border-color: var(--accent);
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-primary);
+  padding: 12px 0;
+  font-family: inherit;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.clearBtn:hover {
+  color: var(--text-primary);
+}
+
+.searchBtn {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: var(--radius-xs);
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.searchBtn:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+.searchBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.searchMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: #333;
+}
+
+.card:hover {
+  border-color: #f75d5d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.sourceTag {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5f6368;
+}
+
+.dateTag {
+  margin-left: auto;
+  font-size: 12px;
+  color: #70757a;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  color: #1a0dab;
+}
+
+.card:hover .title {
+    text-decoration: underline;
+}
+
+.snippet {
+  font-size: 13px;
+  color: #4d5156;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.viewMore {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f75d5d;
+}

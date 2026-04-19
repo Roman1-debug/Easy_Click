@@ -1,0 +1,178 @@
+.statsGrid {
+  margin-bottom: 24px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.leftCol, .rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.actionsCard, .recentCard {
+  padding: 20px;
+}
+
+.actionsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.actionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.actionItem:hover {
+  background: var(--bg-elevated);
+}
+
+.actionDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.actionLabel {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.actionDesc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.actionArrow {
+  margin-left: auto;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* App list */
+.appList {
+  display: flex;
+  flex-direction: column;
+}
+
+.appRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.appRow:last-child {
+  border-bottom: none;
+}
+
+.appIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.appInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.appRole {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.appCompany {
+  font-size: 13px;
+  color: #5f6368;
+}
+
+/* Scam Mini List */
+.scamMiniList {
+    margin-top: 12px;
+}
+
+.scamItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+}
+
+.scamItem:hover {
+    background: #f1f3f4;
+}
+
+.scamDot {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.scamTitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: #202124;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.scamMeta {
+    font-size: 11px;
+    color: #70757a;
+    margin-top: 2px;
+}
